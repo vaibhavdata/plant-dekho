@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+
+<!-- Mirrored from wp.alithemes.com/html/evara/evara-frontend/{% url 'home' %} by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Aug 2021 15:20:36 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <title>Go4plant</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- Favicon -->
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+    {% include "nav.html"%}
+
+    {% block content %}
+    <!-- content -->
+    {% endblock %}
+    {% include "footer.html"%}
+    {% include "script.html"%}
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="{% url 'home' %}" rel="nofollow">Home</a>
+                <span></span> Shop
+            </div>
+        </div>
+    </div>
+    <section class="mt-50 mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shop-product-fillter">
+                        <div class="totall-product">
+                            <p> We found <strong class="text-brand">{{product_count}}</strong> items for you!</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row product-grid-3">
+                        {% if products %}
+                    {% for product in products %}
+                        <div class="col-lg-3 col-md-4">
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="{{ product.get_url }}">
+                                            <img class="default-img" src="{{ product.images.url }}" alt="" width="250" height="250">
+                                            <!--   <img class="hover-img" src="{% static 'imgs/shop/product-2-2.jpg' %}" alt=""> -->
+                                        </a>
+                                    </div>
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                        <span class="hot">{{product.get_label_display}}</span>
+                                    </div>
+                                    
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="shop-grid-right.html">{{product.category}}</a>
+                                    </div>
+                                    <h2><a href="{{ product.get_url }}">{{ product.product_name }}</a></h2>
+                                    <div class="rating-star">
+                                        <span>
+                                            <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <span>{{product.countReview}} reviews</span>
+                                            </span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>₹ {{product.price}}</span>
+                                    </div>
+                                    <div class="product-action-1 show">
+                                        <a aria-label="Add To Cart" class="action-btn hover-up" href="{% url 'add_cart' product.id %}"><i class="fi-rs-shopping-bag-add"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                    </div>
+                    
+                    <div>
+                        <h2>No result found. Please try again.</h2>
+                    </div>
+                    {% endif %}
+                    <!--  -->
+                </div>
+
+                <!-- and -->
+                <!--pagination-->
+                <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
+                    <nav aria-label="Page navigation example">
+                        {% if products.has_other_pages %}
+                        <ul class="pagination justify-content-start">
+                            {% if products.has_previous %}
+                            <li class="page-item active"><a class="page-link" href="?page={{products.previous_page_number}}">Previous</a></li>
+                            {% else %}
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            {% endif %}
+                            {% for i in products.paginator.page_range %}
+				                {% if products.number == i %}
+                                <li class="page-item"><a class="page-link" href="#">{{i}}</a></li>
+                                {% else %}
+                                <li class="page-item"><a class="page-link " href="?page={{i}}">{{i}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if products.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{products.next_page_number}}">Next</a></li>
+                            {% else %}
+                            <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                            {% endif %}
+                        </ul>
+                        {% endif %}
+                    </nav>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

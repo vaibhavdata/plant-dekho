@@ -1,0 +1,19 @@
+{% load static %}
+<section class="featured section-padding position-relative">
+    <div class="container">
+        <div class="row">
+            {% for category in categories %}
+            <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                
+                <div class="banner-features wow fadeIn animated hover-up">
+                    
+                    <img src="{{category.cat_image.url}}" alt="" width="170" height="134">
+                    <h4 class="bg-1">{{category.category_name}}</h4>
+                    
+                </div>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

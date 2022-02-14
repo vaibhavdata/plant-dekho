@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="main">
+    <section class="home-slider position-relative">
+        <div class="hero-slider-1 dot-style-1 dot-style-1-position-1">
+            <div class="single-hero-slider single-animation-wrap">
+                <img src="{% static 'imgs/slider/slider-demo-1.jpg' %}">
+            </div>
+            <div class="single-hero-slider single-animation-wrap">
+                <img src="{% static 'imgs/slider/slider-demo-1.jpg' %}">
+            </div>
+            <div class="single-hero-slider single-animation-wrap">
+                <img src="{% static 'imgs/slider/slider-demo-1.jpg' %}">
+            </div>
+            <div class="single-hero-slider single-animation-wrap">
+                <img src="{% static 'imgs/slider/slider-demo-1.jpg' %}">
+            </div>
+        </div>
+        <div class="slider-arrow hero-slider-1-arrow"></div>
+    </section>
+
+    {% include "Categories.html"%}
+    <section class="product-tabs section-padding position-relative wow fadeIn animated">
+        <div class="bg-square"></div>
+        <div class="container">
+            <div class="tab-header">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one"
+                            type="button" role="tab" aria-controls="tab-one" aria-selected="true">Featured</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nav-tab-two" data-bs-toggle="tab" data-bs-target="#tab-two"
+                            type="button" role="tab" aria-controls="tab-two" aria-selected="false">Popular</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nav-tab-three" data-bs-toggle="tab" data-bs-target="#tab-three"
+                            type="button" role="tab" aria-controls="tab-three" aria-selected="false">New
+                            added</button>
+                    </li>
+                </ul>
+                <a href="/product" class="view-more d-none d-md-flex">View More<i
+                        class="fi-rs-angle-double-small-right"></i></a>
+            </div>
+
+            <!--End nav-tabs-->
+
+            <div class="tab-content wow fadeIn animated" id="myTabContent">
+
+                <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
+
+                    <div class="row product-grid-4">
+                        {% if products %}
+                        {% for product in products %}
+
+                        <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="{{ product.get_url }}">
+                                            <img class="default-img" src="{{product.images.url}}" alt="" width="250" height="210">
+                                            <!-- <img class="hover-img" src="{% static 'imgs/shop/product-1-2.svg' %}" alt=""> -->
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                        <span class="hot">{{product.get_label_display}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="#">{{product.category}}</a>
+                                    </div>
+                                    <h2><a href="{{ product.get_url }}">{{product.product_name}}</a></h2>
+                                    <div class="rating-star">
+                                        <span>
+                                            <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <span>{{product.countReview}} reviews</span>
+                                            </span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>₹ {{product.price}}</span>
+                                    </div>
+                                    <div class="product-action-1 show">
+                                        <a aria-label="Add To Cart" class="action-btn hover-up" href="{% url 'add_cart' product.id %}"><i class="fi-rs-shopping-bag-add"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                        {% else %}
+
+                        
+	                    <div>
+		                <h2>No result found. Please try again.</h2>
+	                    </div>
+	                    {% endif %}
+                    </div>
+
+                    <!--End product-grid-4-->
+                </div>
+
+                <!--En tab one (Featured)-->
+                <div class="tab-pane fade" id="tab-two" role="tabpanel" aria-labelledby="tab-two">
+                    <div class="row product-grid-4">
+                        <div class="col-lg-3 col-md-4 col-12 col-sm-6">
+                            {% for product in products_picked  %}
+                            <div class="product-cart-wrap mb-30">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="{{ product.get_url }}">
+                                            <img class="default-img" src="{{ product.images.url }}" alt="" width="240" height="210">
+                                            <img class="hover-img" src="{% static 'imgs/shop/product.jpg' %}" alt="">
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                        <span class="hot">{{product.get_label_display}}</span>
+                                    </div>
+                                </div>
+                                <div class="product-content-wrap">
+                                    <div class="product-category">
+                                        <a href="#">{{product.description}} </a>
+                                    </div>
+                                    <h2><a href="{{ product.get_url }}">{{ product.product_name }}</a></h2>
+                                    <div class="rating-star">
+                                        <span>
+                                            <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <span>{{product.countReview}} reviews</span>
+                                            </span>
+                                    </div>
+                                    <div class="product-price">
+                                        <span>{{product.price}} </span>
+                                    </div>
+                                    <div class="product-action-1 show">
+                                        <a aria-label="Add To Cart" class="action-btn hover-up" href="{% url 'add_cart' product.id %}"><i class="fi-rs-shopping-bag-add"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!--End product-grid-4-->
+                </div>
+                <!--En tab two (Popular)-->
+                
+                <!--En tab three (New added)-->
+            </div>
+            <!--End tab-content-->
+        </div>
+    </section>
+    <section class="banner-2 section-padding pb-0">
+        <div class="container">
+            <div class="banner-img banner-big wow fadeIn animated f-none">
+                <img src="{% static 'imgs/slider/slider-demo-1.jpg' %}" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="popular-categories section-padding mt-15 mb-25">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>Popular</span> Categories</h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
+                <div class="carausel-6-columns" id="carausel-6-columns">
+                    {% for category in category_latest %}
+                    <div class="card-1">
+
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="{{ category.get_url }}"> <img src="{{category.cat_image.url}}" alt="" width="170" height="134"></a>
+                        </figure>
+                        <h5><a href="{{ category.get_url }}">{{ category.category_name }}</a></h5>
+                    </div>
+                    {% endfor %}
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}

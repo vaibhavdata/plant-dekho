@@ -1,0 +1,130 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="main">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="{% url 'home' %}" rel="nofollow">Home</a>
+                <span></span> Shop
+                <span></span> Checkout
+            </div>
+        </div>
+    </div>
+    <section class="mt-50 mb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="divider mt-50 mb-50"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-25">
+                        <h4>Billing Details</h4>
+                    </div>
+                    <form action="{% url 'place_order' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" required="" name="first_name" placeholder="First name *">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" required="" name="last_name" placeholder="Last name *">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" name="address_line_1" required="" placeholder="Address *">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="address_line_2" required="" placeholder="Address line2">
+                        </div>
+                        <div class="form-group">
+                            <input required="" type="text" name="city" placeholder="City / Town *">
+                        </div>
+                        <div class="form-group">
+                            <input required="" type="text" name="state" placeholder="State / County *">
+                        </div>
+                        <!--<div class="form-group">
+                            <input required="" type="text" name="zipcode" placeholder="Postcode / ZIP *">
+                        </div>-->
+                        <div class="form-group">
+                            <input required="" type="text" name="phone" placeholder="Phone *">
+                        </div>
+                        <div class="form-group">
+                            <input required="" type="text" name="email" placeholder="Email address *">
+                        </div>
+                        <div class=" form-group">
+                            <label for="">Country</label>
+                            <input type="text" name="country" class="form-control" required>
+                          </div>
+                          </div>
+                          
+
+                        <div class="mb-20">
+                            <h5>Additional information</h5>
+                        </div>
+                        <div class="form-group mb-30">
+                            <textarea name="order_note" rows="5" placeholder="Order notes" class="form-control"></textarea>
+                        </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="order_review">
+                        <div class="mb-20">
+                            <h4>Your Orders</h4>
+                        </div>
+                        <div class="table-responsive order_table text-center">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Product</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                {% for cart_item in cart_items %}
+                                <tbody>
+                                    <tr>
+                                        <td class="image product-thumbnail"><img
+                                                src="{{ cart_item.product.images.url }}" alt="#"></td>
+                                        <td>
+                                            <h5><a href="{{ cart_item.product.get_url}}">{{cart_item.product.product_name}}</a>
+                                            </h5> <span class="product-qty">x {{ cart_item.quantity }}</span>
+                                        </td>
+                                        <td>{{ cart_item.product.price }}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>SubTotal</th>
+                                        <td class="product-subtotal" colspan="2">{{ cart_item.sub_total }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tax</th>
+                                        <td colspan="2"><em>{{ tax }}</em></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total</th>
+                                        <td colspan="2" class="product-subtotal"><span
+                                                class="font-xl text-brand fw-900">{{grand_total}}</span></td>
+                                    </tr>
+                                </tbody>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        <div class="bt-1 border-color-1 mt-30 mb-30"></div>
+                        <div class="payment_method">
+                            <div class="mb-25">
+                                <h5>Payment</h5>
+                            </div>
+
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-fill-out btn-block mt-30">PlaceOrder</button>
+                        <a href="{% url 'home' %}" class="btn btn-light btn-block">Continue Shopping</a>
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
