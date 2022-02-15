@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'nursery_ecommerce_app.apps.NurseryEcommerceAppConfig',
     'accounts.apps.AccountsConfig',
     'admin_honeypot',
-    #'pillow',
 ]
 
 MIDDLEWARE = [
@@ -97,15 +96,16 @@ AUTH_USER_MODEL = 'accounts.Account'
        # 'NAME': BASE_DIR / 'db.sqlite3',
    # }
 #}
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'plant_dekho',
-        'USER': 'root',
-        'PASSWORD': 'remo',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+   'default': {
+      'ENGINE': 'django.db.backends.mysql',
+      'NAME': 'plant_dekho',
+      'USER': 'root',
+      'PASSWORD': 'remo',
+      'HOST': '127.0.0.1',
+      'PORT': '3306',
+   }
 }
 
 
