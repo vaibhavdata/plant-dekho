@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.db import models
 from accounts.models import Account
 from django.db.models import Avg, Count
-from PIL import ImageTk, Image
+from PIL import  Image
 
 LABEL_CHOICES = (
     ('S', 'sale'),
