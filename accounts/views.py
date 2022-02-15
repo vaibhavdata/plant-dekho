@@ -58,7 +58,7 @@ def register(request):
             send_mail = EmailMessage(mail_subject, message, to=[to_email])
             send_mail.send()
             messages.success(request, "Registration succesfully")
-            return redirect('accounts/login/?command=verification&email='+email)
+            return redirect('/accounts/login/?command=verification&email='+email)
     else:
         form = RegistrationForm()
     context = {
@@ -219,7 +219,7 @@ def change_password(request):
 @login_required(login_url='login')
 def edit_profile(request):
     userprofile = get_object_or_404(UserProfile, user=request.user)
-    if request.method == "POST":
+    if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = UserProfileForm(request.POST, request.FILES, instance=userprofile)
         if user_form.is_valid() and profile_form.is_valid():
