@@ -98,7 +98,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
    }
 }
-
+import dj_database_url
+df_from_env = dj_database_url.config(conn_max_age = 1000)
+DATABASES['default'].update(df_from_env)
 
 
 

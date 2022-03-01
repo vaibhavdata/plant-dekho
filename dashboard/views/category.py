@@ -22,7 +22,7 @@ def admin_add_category(request):
             data.description = form.cleaned_data['description']
             data.cat_image = form.cleaned_data['cat_image']
             
-            data.save()
+            img_obj = form.instance
            
             request.session['success'] = "Successfully added category"
             return redirect('admin_products_category')
