@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'admin_honeypot',
     'dashboard.apps.DashboardConfig',
-    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
