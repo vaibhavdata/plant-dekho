@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'nursery_ecommerce_app.apps.NurseryEcommerceAppConfig',
     'accounts.apps.AccountsConfig',
     'admin_honeypot',
+    'dashboard.apps.DashboardConfig',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -63,7 +65,7 @@ MIDDLEWARE = [
     'django_session_timeout.middleware.SessionTimeoutMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-
+CSRF_COOKIE_SECURE = False
 ROOT_URLCONF = 'plants_dekho.urls'
 
 TEMPLATES = [
@@ -91,23 +93,14 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-#DATABASES = {
-    #'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-       # 'NAME': BASE_DIR / 'db.sqlite3',
-   # }
-#}
-
 DATABASES = {
-   'default': {
-      'ENGINE': 'django.db.backends.mysql',
-      'NAME': 'plant_dekho',
-      'USER': 'root',
-      'PASSWORD': 'remo',
-      'HOST': '127.0.0.1',
-      'PORT': '3306',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
    }
 }
+
+
 
 
 # Password validation

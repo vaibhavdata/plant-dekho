@@ -9,4 +9,5 @@ urlpatterns = [
     path('bosslogin/', admin.site.urls),
     path('', include('nursery_ecommerce_app.urls')),
     path('accounts/', include('accounts.urls')),
+    path('admindashboard/',include('dashboard.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,9 +7,9 @@ from django.db.models import Avg, Count
 from PIL import  Image
 
 LABEL_CHOICES = (
-    ('S', 'sale'),
-    ('N', 'new'),
-    ('P', 'promotion')
+    ('Sale', 'sale'),
+    ('New', 'new'),
+    ('Promotion', 'promotion')
 )
 class Product(models.Model):
     product_name    = models.CharField(max_length=200, unique=True)
@@ -18,7 +18,7 @@ class Product(models.Model):
     price           = models.IntegerField()
     images          = models.ImageField(upload_to='photos/products')
     stock           = models.IntegerField()
-    label = models.CharField(choices=LABEL_CHOICES, max_length=1)
+    label = models.CharField(choices=LABEL_CHOICES, max_length=50,null=True)
     is_available    = models.BooleanField(default=True)
     category        = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_date    = models.DateTimeField(auto_now_add=True)

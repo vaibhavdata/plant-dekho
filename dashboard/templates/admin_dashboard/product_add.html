@@ -1,0 +1,241 @@
+{% extends 'admin_dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<div id="content" class="colM">
+
+    <h1>Add product</h1>
+
+    <div id="content-main">
+
+        <form method="POST" action="{% url 'admin_add_product_view' products.id %}" >
+            {% csrf_token %}
+            <div>
+                <fieldset class="module aligned ">
+                    <div class="form-row field-product_name">
+
+
+                        <div>
+                            <label class="required" for="id_product_name">Product name:</label>
+
+                            <input type="text" name="product_name" class="vTextField" maxlength="200" required=""
+                                id="id_product_name">
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row field-slug">
+                        <div>
+                            <label class="required" for="id_slug">Slug:</label>
+
+                            <input type="text" name="slug" class="vTextField" maxlength="200" required="" id="id_slug">
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row field-description">
+
+
+                        <div>
+                            <label for="id_description">Description:</label>
+
+                            <textarea name="description" cols="40" rows="10" class="vLargeTextField" maxlength="500"
+                                id="id_description"></textarea>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row field-price">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_price">Price:</label>
+
+                            <input type="number" name="price" class="vIntegerField" required="" id="id_price">
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row field-images">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_images">Images:</label>
+
+                            <input type="file" name="images" accept="image/*" required="" id="id_images">
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row field-stock">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_stock">Stock:</label>
+
+                            <input type="number" name="stock" class="vIntegerField" required="" id="id_stock">
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row field-label">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_label">Label:</label>
+
+                            <select name="label" required="" id="id_label">
+                                <option value="" selected="">---------</option>
+
+                                <option value="Sale">sale</option>
+
+                                <option value="New">new</option>
+
+                                <option value="Promotion">promotion</option>
+
+                            </select>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-row field-category">
+
+
+                        <div>
+
+
+                            <label class="required" for="id_category">Category:</label>
+
+                            <div class="related-widget-wrapper">
+                                <select name="category" required="" id="id_category">
+                                    <option value="" selected="">category_name</option>
+                                    <option value="1">indoor</option>
+                                    <option value="2">bedroom</option>
+
+
+                                </select>
+                                <a class="related-widget-wrapper-link change-related" id="change_id_category"
+                                    data-href-template="/bosslogin/nursery_ecommerce_app/category/__fk__/change/?_to_field=id&amp;_popup=1"
+                                    title="Change selected category"><img src="/static/admin/img/icon-changelink.svg"
+                                        alt="Change"></a><a class="related-widget-wrapper-link add-related"
+                                    id="add_id_category"
+                                    href="/bosslogin/nursery_ecommerce_app/category/add/?_to_field=id&amp;_popup=1"
+                                    title="Add another category"><img src="/static/admin/img/icon-addlink.svg"
+                                        alt="Add"></a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+                <div class="js-inline-admin-formset inline-group" id="productgallery_set-group"
+                    data-inline-type="tabular"
+                    data-inline-formset="{&quot;name&quot;: &quot;#productgallery_set&quot;, &quot;options&quot;: {&quot;prefix&quot;: &quot;productgallery_set&quot;, &quot;addText&quot;: &quot;Add another Productgallery&quot;, &quot;deleteText&quot;: &quot;Remove&quot;}}">
+                    <div class="tabular inline-related last-related">
+                        <input type="hidden" name="productgallery_set-TOTAL_FORMS" value="1"
+                            id="id_productgallery_set-TOTAL_FORMS" autocomplete="off"><input type="hidden"
+                            name="productgallery_set-INITIAL_FORMS" value="0"
+                            id="id_productgallery_set-INITIAL_FORMS"><input type="hidden"
+                            name="productgallery_set-MIN_NUM_FORMS" value="0" id="id_productgallery_set-MIN_NUM_FORMS"
+                            autocomplete="off"><input type="hidden" name="productgallery_set-MAX_NUM_FORMS" value="1000"
+                            id="id_productgallery_set-MAX_NUM_FORMS" autocomplete="off">
+                        <fieldset class="module ">
+
+                            <h2>Product gallery</h2>
+
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="original"></th>
+
+
+                                        <th class="column-image required">Image
+
+                                        </th>
+
+
+                                        <th>Delete?</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+
+                                    <tr class="form-row dynamic-productgallery_set" id="productgallery_set-0">
+                                        <td class="original">
+
+                                            <input type="hidden" name="productgallery_set-0-id"
+                                                id="id_productgallery_set-0-id">
+                                            <input type="hidden" name="productgallery_set-0-product"
+                                                id="id_productgallery_set-0-product">
+
+                                        </td>
+                                        <td class="field-image"><input type="file" name="productgallery_set-0-image"
+                                                accept="image/*" id="id_productgallery_set-0-image">
+
+                                        </td>
+                                        <td class="delete">
+                                            <div><a class="inline-deletelink" href="#">Remove</a></div>
+                                        </td>
+                                    </tr>
+                                    <tr class="form-row  empty-form" id="productgallery_set-empty">
+                                        <td class="original"><input type="hidden"
+                                                name="productgallery_set-__prefix__-id"
+                                                id="id_productgallery_set-__prefix__-id">
+                                            <input type="hidden" name="productgallery_set-__prefix__-product"
+                                                id="id_productgallery_set-__prefix__-product">
+                                        </td>
+                                        <td class="field-image">
+                                            <input type="file" name="productgallery_set-__prefix__-image"
+                                                accept="image/*" id="id_productgallery_set-__prefix__-image">
+                                        </td>
+                                        <td class="delete"></td>
+
+                                    </tr>
+                                    <tr class="add-row">
+                                        <td colspan="3"><a href="#">Add another Productgallery</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="submit-row">
+                    <input type="submit" value="Save" class="default" name="_save">
+                    <input type="submit" value="Save and add another" name="_addanother">
+                    <input type="submit" value="Save and continue editing" name="_continue">
+                </div>
+                
+            </div>
+        </form>
+    </div>
+
+
+    <br class="clear">
+</div>
+{% endblock %}

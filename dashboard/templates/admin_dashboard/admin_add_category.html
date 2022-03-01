@@ -1,0 +1,42 @@
+{% extends 'admin_dashboard/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="col-md-3">
+    <form method="POST" action="{% url 'admin_add_category' %}" enctype="multipart/form-data>
+        {% csrf_token %}
+        <!--<div class="mb-4">
+            <label for="category_name" class="form-label">Name</label>
+            <input type="text" placeholder="Type here" class="form-control" id="category_name" name="category_name" />
+        </div>-->
+        <div class="col-12">
+            <div class="form-group">
+                <textarea class="form-control w-100" name="category_name" id="category_name" cols="1" rows="1"
+                    placeholder="Name"></textarea>
+            </div>
+        </div>
+        
+        <div class="mb-4">
+            <label for="slug" class="form-label">Slug</label>
+            <input type="text" placeholder="slug" class="form-control" id="slug" name="slug" />
+        </div>
+        <div class="mb-4">
+            <label class="form-label">Description</label>
+            <textarea placeholder="Type here" class="form-control" id="description" name="description"></textarea>
+        </div>
+        <div class="form-row field-cat_image">
+            <div><label for="id_cat_image">Cat image</label>
+              <input name="cat_images" type="file" accept="image/*"/>
+            </div>
+          </div>
+          
+
+        <!--<a href="{% url 'admin_products_category'%}" class="btn btn-primary">Add</a>-->
+        <!--<button type="submit" class="btn btn-primary">Create category</button>-->
+        <button type="submit" name="submit" class="btn btn-fill-out btn-block mt-30">Add</button>
+
+
+    </form>
+</div>
+
+{% endblock %}

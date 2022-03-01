@@ -8,7 +8,6 @@ class Category(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField(max_length=255, blank=True)
     cat_image = models.ImageField(upload_to='photos/categories', blank=True)
-    
 
     class Meta:
         verbose_name = 'category'
@@ -19,3 +18,8 @@ class Category(models.Model):
 
     def __str__(self):
         return self.category_name
+    
+    '''def get_photo_url(self):
+        if self.cat_image and hasattr(self.cat_image, 'url'):
+            return self.cat_image.url
+        return None'''
