@@ -174,8 +174,8 @@ AUTHENTICATION_BACKENDS = (
 DEBUG = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'vaibhavmc01@gmail.com'
-EMAIL_HOST_PASSWORD = 'vaibhav@!93'
+EMAIL_HOST_USER = 'testkro356@gmail.com'
+EMAIL_HOST_PASSWORD = 'testadmin!12'
 EMAIL_PORT = 587
 # Whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
