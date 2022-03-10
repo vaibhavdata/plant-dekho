@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r^y)v34ih0-$&gu1n7$%$2kw=&il!z!p$6v0**4*p2hadx$297'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = ['https://plantdekho.herokuapp.com/','https://plantdekho.herokuapp.com/','127.0.0.1',]
 
@@ -89,6 +89,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'plants_dekho.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.Account'
+AUTHENTICATION_BACKENDS = (
+    'nursery_ecommerce_app.backends.EmailBackend',
+    'dashboard.backends.EmailBackend',
+    
+)
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -161,7 +166,9 @@ STATICFILES_DIRS = (
     #os.path.join(BASE_DIR, 'dashboard/static/'),
 )
 STATICFILES_LOCATION = 'static'
-
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
 # SMTP configuration
 # SMTP configuration
 DEBUG = True

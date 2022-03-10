@@ -19,6 +19,7 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
     
+    
     '''def get_photo_url(self):
         if self.cat_image and hasattr(self.cat_image, 'url'):
             return self.cat_image.url

@@ -7,7 +7,9 @@ from nursery_ecommerce_app.models.customer import Contact
 from nursery_ecommerce_app.models.order import Order,OrderProduct
 from django.db.models import Q
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+login_required(login_url='admin_login')
 def admin_dashboard(request):
     products = Product.objects.all().filter(is_available=True).order_by('id')
     product = Product.objects.all()
@@ -19,8 +21,10 @@ def admin_dashboard(request):
 
     }
     return render(request,"admin_dashboard/index.html",context)
+login_required(login_url='admin_login')
 def admin_product_order(request):
     return render(request,"admin_dashboard/page-orders-1.html")
+@login_required(login_url='admin_login')
 def admin_serach(request):
     if 'keyword' in request.GET:
         keyword = request.GET['keyword']

@@ -5,7 +5,7 @@ from nursery_ecommerce_app.models.product import Product,ReviewRating
 
 def home(request):
     products = Product.objects.all().filter(is_available=True).order_by('created_date')
-    categories = Category.objects.all()
+    categories = Category.objects.all()[:6]
     #products_slider = Product.objects.all().order_by('id')[:4]  #first 4 products
     products_picked = Product.objects.all().order_by('?')[:4] # randomly select product
     products_latest = Product.objects.all().order_by('-id')[:4]  # last 4 products

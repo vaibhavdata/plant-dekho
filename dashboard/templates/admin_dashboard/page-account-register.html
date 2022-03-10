@@ -2,42 +2,47 @@
 {% load static %}
 {% block content %}
 <section class="content-main mt-80 mb-80">
+    {% include 'admin_dashboard/alert.html' %}
     <div class="card mx-auto card-login">
         <div class="card-body">
             <h4 class="card-title mb-4">Create an Account</h4>
             <form action="{% url 'admin_register' %}" method="POST">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label class="form-label">First Name</label>
-                    <input class="form-control" placeholder="First name" type="text"  name="firstname" required>
+                    
+                    <input class="form-control" placeholder="First name" type="text"  name="first_name" required>
                 </div> <!-- form-group// -->
                 <div class="mb-3">
-                    <label class="form-label">Last name</label>
-                    <input class="form-control" placeholder="last name" type="text"  name="lastname" required>
+                    
+                    <input class="form-control" placeholder="Last name" type="text"  name="last_name" required>
                 </div> <!-- form-group// -->
+                <!--<div class="mb-3">
+                    
+                    <input class="form-control" placeholder="User name" type="text"  name="username" required>
+                </div>  form-group// -->
                 <div class="mb-3">
-                    <label class="form-label">User name</label>
-                    <input class="form-control" placeholder="User  name" type="text"  name="username" required>
-                </div> <!-- form-group// -->
+                    
+                    <input class="form-control" placeholder="Enter Phone Number" type="text"  name="phone_number" required>
+                </div>
                 <div class="mb-3">
-                    <label class="form-label">Email</label>
+                    
                     <input class="form-control" placeholder="Your email" type="email" name="email">
                 </div> <!-- form-group// -->
                 
                 <div class="mb-3">
-                    <label class="form-label">Create password</label>
-                    <input class="form-control" placeholder="Password" type="password"  name="password">
+                    
+                    <input class="form-control" placeholder="Enter Password" type="password"  name="password">
                 </div> <!-- form-group// -->
                 <div class="mb-3">
                     <label class="form-label">Config password</label>
-                    <input class="form-control" placeholder="Password" type="password"  name="confirm_password">
+                    <input class="form-control" placeholder="Confirm Password" type="password"  name="confirm_password">
                 </div> <!-- form-group// -->
                 <div class="mb-3">
                     <p class="small text-center text-muted">By signing up, you confirm that you’ve read and accepted our
                         User Notice and Privacy Policy.</p>
                 </div> <!-- form-group  .// -->
                 <div class="mb-4">
-                    <button type="submit" class="btn btn-primary w-100"> Login </button>
+                    <button type="submit" class="btn btn-primary w-100"> SingUp </button>
                 </div> <!-- form-group// -->
             </form>
 

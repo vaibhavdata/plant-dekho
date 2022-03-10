@@ -3,20 +3,30 @@
 {% block content %}
 
 <section class="content-main">
+    {% include 'admin_dashboard/alert.html' %}
     <div class="content-header">
         <div>
             <h2 class="content-title card-title">Categories </h2>
             <p>Add, edit or delete a category</p>
         </div>
         <div>
-            <input type="text" placeholder="Search Categories" class="form-control bg-white">
+            <form action="{% url 'category_search' %}" method="GET">
+                <input type="text" placeholder="Search Categories" name="keyword" class="form-control bg-white">
+            </form>
             <a href="{% url 'admin_add_category' %}" class="btn btn-primary">Add Category </a>
         </div>
     </div>
     <div class="card">
         <div class="card-body">
+            <div class="shop-product-fillter">
+                <div class="totall-product">
+                    <p> We found <strong class="text-brand">{{category_count}}</strong> category for you!</p>
+                </div>
+
+            </div>
             <div class="row">
                 <div class="col-md-9">
+                    {% if categories %}
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
@@ -30,11 +40,12 @@
                                     <th>Name</th>
                                     <th>Slug</th>
                                     <th>Description</th>
-                                    <th>Order</th>
+                                    <th> Image </th>
                                     <th class="text-end">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+
                                 {% for categories in categories %}
                                 <tr>
                                     <td class="text-center">
@@ -46,29 +57,39 @@
                                     <td><b>{{categories.category_name}}</b></td>
                                     <td>{{categories.slug}}</td>
                                     <td>{{categories.description}}</td>
-                                    <td>{{categories.cat_image}}</td>
-                                    
+                                    <td>
+                                        <img src="{{categories.cat_image.url}}" alt="" width="40" height="40">
+                                    </td>
+
                                     <td class="text-end">
                                         <div class="dropdown">
                                             <a href="#" data-bs-toggle="dropdown"
                                                 class="btn btn-light rounded btn-sm font-sm"> <i
                                                     class="material-icons md-more_horiz"></i> </a>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">View detail</a>
-                                                <a class="dropdown-item" href="{% url 'admin_edit_category' categories.id  %}">Edit info</a>
-                                                <a class="dropdown-item text-danger" href="#">Delete</a>
+                                                <a class="dropdown-item"
+                                                    href="{% url 'admin_edit_category' categories.id %}">Edit info</a>
+                                                <a class="dropdown-item text-danger"
+                                                    href="{% url 'admin_delete_category' categories.id %}">Delete</a>
                                             </div>
                                         </div> <!-- dropdown //end -->
                                     </td>
-                                    
+
                                 </tr>
                                 {% endfor %}
-                            </tbody>
-                        </table>
+
                     </div>
-                </div> <!-- .col// -->
-            </div> <!-- .row // -->
-        </div> <!-- card body .// -->
+                    {% else %}
+                    <div>
+                        <h2>No result found. Please try again.</h2>
+                    </div>
+                    {% endif %}
+                    </tbody>
+                    </table>
+                </div>
+            </div> <!-- .col// -->
+        </div> <!-- .row // -->
+    </div> <!-- card body .// -->
     </div> <!-- card .// -->
 </section> <!-- content-main end// -->
 {% endblock %}

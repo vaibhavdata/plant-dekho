@@ -1,0 +1,43 @@
+{% extends 'admin_dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<section class="content-main mt-80 mb-80">
+    <div class="card mx-auto card-login">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Create an Account</h4>
+            <form action="{% url 'registering' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group form-box">
+                    <input type="text" name="firstname" class="input-text" placeholder="First Name" required>
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="form-group form-box">
+                    <input type="text" name="lastname" class="input-text" placeholder="Last Name" required>
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="form-group form-box">
+                    <input type="text" name="username" class="input-text" placeholder="Username" required>
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="form-group form-box">
+                    <input type="email" name="email" class="input-text" placeholder="Email Address" required>
+                    <i class="flaticon-mail"></i>
+                </div>
+                <div class="form-group form-box">
+                    <input type="password" name="password" class="input-text" placeholder="Password" required>
+                    <i class="flaticon-lock"></i>
+                </div>
+                <div class="form-group form-box">
+                    <input type="password" name="confirm_password" class="input-text" placeholder="Confirm Password" required>
+                    <i class="flaticon-lock"></i>
+                </div>
+                <div class="form-group mb-0 clearfix">
+                    <button type="submit" class="btn-md btn-theme float-left">Register</button>
+                </div>
+            </form>
+
+            <p class="text-center mb-2">Already have an account? <a href="{% url 'admin_login' %}">Sign in now</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

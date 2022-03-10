@@ -1,0 +1,108 @@
+{% extends 'admin_dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<section class="content-main">
+    <form method="POST" enctype="multipart/form-data" action="">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-9">
+                <div class="content-header">
+                    <h2 class="content-title">Edit In Product</h2>
+                    <div>
+                        <button type="submit" class="btn btn-light rounded font-sm mr-5 text-body hover-up">Save to
+                            draft</button>
+                        
+                        <button  class="btn btn-md rounded font-sm hover-up">Publich</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <label for="product_title" class="form-label">Product title</label>
+                            {{form.product_name}}
+                        </div>
+                        <div class="mb-4">
+                            <label for="product_slug" class="form-label">slug</label>
+                            {{form.slug}}
+                        </div>
+                        <div class="mb-4">
+                            <label for="product_brand" class="form-label">stock</label>
+                            {{form.stock}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div>
+                            <label class="form-label">Description</label>
+                            {{form.description}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div>
+                            <label class="form-label">Images</label>
+                            {% if form.images %}
+                            {{ form.images }}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <label class="form-label">Price</label>
+                            {{form.price}}
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Label</label>
+                            <select class="from-control" name="label">
+                                <option value="">---------</option>
+                                {% for label in form.label%}
+                                {{label}}
+                                {% endfor %}
+                                
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Categories </label>
+                            <select class="from-control" name="category">
+                                <option value="">---------</option>
+                                {% for category in form.category%}
+                                {{category}}
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </form>
+    </div>
+</section>
+{% endblock %}
+
+<tr><th><label for="id_label">Label:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><select name="label" required id="id_label">
+    <option value="" selected>None</option>
+  
+    <option value="Sale">Sale</option>
+  
+  </select></td></tr>
+  <tr><th><label for="id_category">Category:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><select name="category" required id="id_category">
+    <option value="" selected>---------</option>
+  
+    <option value="2">bedroom</option>
+  
+    <option value="26">test3</option>
+  
+    <option value="28">test4</option>
+  
+    <option value="29">outdoor</option>
+  
+  </select></td></tr>

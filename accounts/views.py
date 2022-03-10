@@ -1,7 +1,5 @@
-from multiprocessing import context
-import re
+
 from django.shortcuts import render
-from decimal import Overflow
 from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from django.contrib.auth.hashers import check_password
 from .models import Account, UserProfile
@@ -132,6 +130,7 @@ def dashboard(request):
         'userprofile': userprofile,
     }
     return render(request, 'dashboard.html',context)
+@login_required(login_url = 'login')
 def forgotPassword(request):
     if request.method == 'POST':
         email = request.POST['email']
@@ -157,7 +156,7 @@ def forgotPassword(request):
             messages.error(request, 'Account does not exist!')
             return redirect('forgotPassword')
     return render(request, 'forgotPassword.html')
-
+@login_required(login_url = 'login')
 def resetpassword_validate(request, uidb64, token):
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
@@ -173,7 +172,7 @@ def resetpassword_validate(request, uidb64, token):
         messages.error(request, 'This link has been expired!')
         return redirect('login')
 
-
+@login_required(login_url = 'login')
 def resetPassword(request):
     if request.method == 'POST':
         password = request.POST['password']
@@ -215,6 +214,7 @@ def change_password(request):
             messages.error(request, 'Password does not match!')
             return redirect('change_password')
     return render(request, 'change_password.html')
+
 
 @login_required(login_url='login')
 def edit_profile(request):

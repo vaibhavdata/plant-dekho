@@ -61,13 +61,18 @@
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
                                         <a href="{{ product.get_url }}">
-                                            <img class="default-img" src="{{product.images.url}}" alt="" width="250" height="210">
+                                            <img class="default-img" src="{{product.images.url}}" alt="" width="250"
+                                                height="210">
                                             <!-- <img class="hover-img" src="{% static 'imgs/shop/product-1-2.svg' %}" alt=""> -->
                                         </a>
                                     </div>
-                                    
+
+                                    {% if product.get_label_display %}
                                     <div class="product-badges product-badges-position product-badges-mrg">
-                                        <span class="hot">{{product.get_label_display}}</span>
+                                    <span class="hot">{{product.get_label_display}}</span>
+                                    {% else %}
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                    {% endif %}
                                     </div>
                                 </div>
 
@@ -78,19 +83,26 @@
                                     <h2><a href="{{ product.get_url }}">{{product.product_name}}</a></h2>
                                     <div class="rating-star">
                                         <span>
-                                            <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}"
+                                                aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}"
+                                                aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}"
+                                                aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}"
+                                                aria-hidden="true"></i>
+                                            <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}"
+                                                aria-hidden="true"></i>
                                             <span>{{product.countReview}} reviews</span>
-                                            </span>
+                                        </span>
                                     </div>
                                     <div class="product-price">
                                         <span>₹ {{product.price}}</span>
                                     </div>
                                     <div class="product-action-1 show">
-                                        <a aria-label="Add To Cart" class="action-btn hover-up" href="{% url 'add_cart' product.id %}"><i class="fi-rs-shopping-bag-add"></i></a>
+                                        <a aria-label="Add To Cart" class="action-btn hover-up"
+                                            href="{% url 'add_cart' product.id %}"><i
+                                                class="fi-rs-shopping-bag-add"></i></a>
                                     </div>
                                 </div>
 
@@ -100,11 +112,11 @@
                         {% endfor %}
                         {% else %}
 
-                        
-	                    <div>
-		                <h2>No result found. Please try again.</h2>
-	                    </div>
-	                    {% endif %}
+
+                        <div>
+                            <h2>No result found. Please try again.</h2>
+                        </div>
+                        {% endif %}
                     </div>
 
                     <!--End product-grid-4-->
@@ -114,53 +126,68 @@
                 <div class="tab-pane fade" id="tab-two" role="tabpanel" aria-labelledby="tab-two">
                     <div class="row product-grid-4">
                         <div class="col-lg-3 col-md-4 col-12 col-sm-6">
-                            {% for product in products_picked  %}
+                            {% for product in products_picked %}
                             <div class="product-cart-wrap mb-30">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
                                         <a href="{{ product.get_url }}">
-                                            <img class="default-img" src="{{ product.images.url }}" alt="" width="240" height="210">
+                                            <img class="default-img" src="{{ product.images.url }}" alt="" width="240"
+                                                height="210">
                                             <img class="hover-img" src="{% static 'imgs/shop/product.jpg' %}" alt="">
                                         </a>
                                     </div>
-                                    
+                                    {% if product.get_label_display %}
                                     <div class="product-badges product-badges-position product-badges-mrg">
-                                        <span class="hot">{{product.get_label_display}}</span>
+                                    <span class="hot">{{product.get_label_display}}</span>
+                                    {% else %}
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                    {% endif %}
                                     </div>
-                                </div>
-                                <div class="product-content-wrap">
-                                    <div class="product-category">
-                                        <a href="#">{{product.description}} </a>
+
+
+
                                     </div>
-                                    <h2><a href="{{ product.get_url }}">{{ product.product_name }}</a></h2>
-                                    <div class="rating-star">
-                                        <span>
-                                            <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            <span>{{product.countReview}} reviews</span>
+                                    <div class="product-content-wrap">
+                                        <div class="product-category">
+                                            <a href="#">{{product.description}} </a>
+                                        </div>
+                                        <h2><a href="{{ product.get_url }}">{{ product.product_name }}</a></h2>
+                                        <div class="rating-star">
+                                            <span>
+                                                <i class="fa fa-star{% if product.averageReview < 0.5 %}-o{% elif product.averageReview >= 0.5 and product.averageReview < 1 %}-half-o {% endif %}"
+                                                    aria-hidden="true"></i>
+                                                <i class="fa fa-star{% if product.averageReview < 1.5 %}-o{% elif product.averageReview >= 1.5 and product.averageReview < 2 %}-half-o {% endif %}"
+                                                    aria-hidden="true"></i>
+                                                <i class="fa fa-star{% if product.averageReview < 2.5 %}-o{% elif product.averageReview >= 2.5 and product.averageReview < 3 %}-half-o {% endif %}"
+                                                    aria-hidden="true"></i>
+                                                <i class="fa fa-star{% if product.averageReview < 3.5 %}-o{% elif product.averageReview >= 3.5 and product.averageReview < 4 %}-half-o {% endif %}"
+                                                    aria-hidden="true"></i>
+                                                <i class="fa fa-star{% if product.averageReview < 4.5 %}-o{% elif product.averageReview >= 4.5 and product.averageReview < 5 %}-half-o {% endif %}"
+                                                    aria-hidden="true"></i>
+                                                <span>{{product.countReview}} reviews</span>
                                             </span>
-                                    </div>
-                                    <div class="product-price">
-                                        <span>{{product.price}} </span>
-                                    </div>
-                                    <div class="product-action-1 show">
-                                        <a aria-label="Add To Cart" class="action-btn hover-up" href="{% url 'add_cart' product.id %}"><i class="fi-rs-shopping-bag-add"></i></a>
+                                        </div>
+                                        <div class="product-price">
+                                            <span>{{product.price}} </span>
+                                        </div>
+                                        <div class="product-action-1 show">
+                                            <a aria-label="Add To Cart" class="action-btn hover-up"
+                                                href="{% url 'add_cart' product.id %}"><i
+                                                    class="fi-rs-shopping-bag-add"></i></a>
+                                        </div>
                                     </div>
                                 </div>
+                                {% endfor %}
                             </div>
-                            {% endfor %}
                         </div>
+                        <!--End product-grid-4-->
                     </div>
-                    <!--End product-grid-4-->
+                    <!--En tab two (Popular)-->
+
+                    <!--En tab three (New added)-->
                 </div>
-                <!--En tab two (Popular)-->
-                
-                <!--En tab three (New added)-->
+                <!--End tab-content-->
             </div>
-            <!--End tab-content-->
         </div>
     </section>
     <section class="banner-2 section-padding pb-0">
@@ -180,14 +207,15 @@
                     <div class="card-1">
 
                         <figure class=" img-hover-scale overflow-hidden">
-                            <a href="{{ category.get_url }}"> <img src="{{category.cat_image.url}}" alt="" width="170" height="134"></a>
+                            <a href="{{ category.get_url }}"> <img src="{{category.cat_image.url}}" alt="" width="170"
+                                    height="134"></a>
                         </figure>
                         <h5><a href="{{ category.get_url }}">{{ category.category_name }}</a></h5>
                     </div>
                     {% endfor %}
-                    
-                    
-                    
+
+
+
                 </div>
             </div>
         </div>
