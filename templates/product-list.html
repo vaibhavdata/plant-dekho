@@ -33,8 +33,12 @@
                                             <!--   <img class="hover-img" src="{% static 'imgs/shop/product-2-2.jpg' %}" alt=""> -->
                                         </a>
                                     </div>
+                                    {% if product.get_label_display %}
                                     <div class="product-badges product-badges-position product-badges-mrg">
                                         <span class="hot">{{product.get_label_display}}</span>
+                                    {% else %}
+                                    <div class="product-badges product-badges-position product-badges-mrg">
+                                    {% endif  %}
                                     </div>
                                     
                                 </div>

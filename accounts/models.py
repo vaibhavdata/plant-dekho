@@ -23,7 +23,7 @@ class MyAccountManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    '''def create_superuser(self, first_name, last_name, email, username, password):
+    def create_superuser(self, first_name, last_name, email, username, password):
         user = self.create_user(
             email = self.normalize_email(email),
             username = username,
@@ -36,7 +36,7 @@ class MyAccountManager(BaseUserManager):
         user.is_staff = True
         user.is_superadmin = True
         user.save(using=self._db)
-        return user'''
+        return user
     def createSuperUser(self,username, password, email = "", first_name = "", last_name = ""):
         invalidInputs = ["", None]
 
