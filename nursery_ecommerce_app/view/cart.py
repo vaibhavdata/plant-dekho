@@ -18,8 +18,23 @@ def add_cart(request, product_id):
     # If the user is authenticated
     if current_user.is_authenticated:
         is_cart_item_exists = CartItem.objects.filter(product=product, user=current_user).exists()
+        #if is_cart_item_exists:
+            #item = is_cart_item_exists[0]
+            #cart_item = CartItem.objects.filter(product=product, user=current_user)
+        #if is_cart_item_exists:
+            #item = CartItem.objects.filter(product=product, user=current_user)
+            #item_id = cart_item[0]
+            #item = CartItem.objects.get(product=product, id=item_id)
+            #item.quantity += 1
+            #item.save()
         if is_cart_item_exists:
-            cart_item = CartItem.objects.filter(product=product, user=current_user)
+            cart_item = CartItem.objects.get(product=product, user=current_user)
+            cart_item.quantity += 1
+            cart_item.save()
+            
+
+            
+            
             
         else:
             cart_item = CartItem.objects.create(
@@ -29,6 +44,7 @@ def add_cart(request, product_id):
             )
             cart_item.save()
         return redirect('cart')
+   
     # If the user is not authenticated
     else:
         try:
@@ -41,7 +57,7 @@ def add_cart(request, product_id):
 
         is_cart_item_exists = CartItem.objects.filter(product=product, cart=cart).exists()
         if is_cart_item_exists:
-            cart_item = CartItem.objects.filter(product=product, cart=cart)
+            cart_item = CartItem.objects.get(product=product, cart=cart)
             cart_item.quantity += 1
             cart_item.save()
 

@@ -23,7 +23,7 @@ from nursery_ecommerce_app.view.cart import cart, _cart_id
 from django.contrib.auth import authenticate, login
 from django.views.generic import TemplateView
 from django.views.generic.base import View
-
+from nursery_ecommerce_app.models.order import Order,OrderProduct
 # request.post contain all field value
 # form..clend_data means fecting all form data
 # crate_user means all fields value add from user account
@@ -123,12 +123,16 @@ def activate(request,uidb64,token):
         return redirect('register')
 @login_required(login_url = 'login')
 def dashboard(request):
+    orders = Order.objects.order_by('-created_at').filter(user_id=request.user.id, is_ordered=True)
+    orders_count = orders.count()
 
     userprofile = UserProfile.objects.filter(user_id=request.user.id)
-    #userprofile = userprofile.get_profile()
     context = {
+        'orders_count': orders_count,
         'userprofile': userprofile,
     }
+
+   
     return render(request, 'dashboard.html',context)
 @login_required(login_url = 'login')
 def forgotPassword(request):
@@ -218,18 +222,21 @@ def change_password(request):
 
 @login_required(login_url='login')
 def edit_profile(request):
-    userprofile = get_object_or_404(UserProfile, user=request.user)
+    #userprofile = get_object_or_404(UserProfile, user=request.user)
+    userprofile = UserProfile.objects.filter(user=request.user).first()
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
-        profile_form = UserProfileForm(request.POST, request.FILES, instance=userprofile)
+        profile_form = UserProfileForm(request.POST, request.FILES, instance=request.user)
+        
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
+            print(profile_form)
             messages.success(request, 'Your profile has been updated.')
             return redirect('edit_profile')
     else:
         user_form = UserForm(instance=request.user)
-        profile_form = UserProfileForm(instance=userprofile)
+        profile_form = UserProfileForm(instance=request.user)
     context = {
         'user_form': user_form,
         'profile_form': profile_form,

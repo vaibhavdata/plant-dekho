@@ -1,3 +1,4 @@
+from ast import keyword
 from itertools import product
 from sys import implementation
 from django.shortcuts import render,redirect,get_object_or_404
@@ -11,7 +12,7 @@ from django.http import HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 import datetime
-#@login_required(login_url='admin_login')
+@login_required(login_url='admin_login')
 def admin_add_product(request):
     if request.method=="POST":
         form = ProductForm(request.POST,request.FILES)
@@ -43,13 +44,14 @@ def admin_add_product(request):
     }
             
     return render(request,"admin_dashboard/product_add.html",context)
-#@login_required(login_url='admin_login')
+@login_required(login_url='admin_login')
 def admin_products_list(request):
     products = Product.objects.all().filter(is_available=True).order_by('id')
     paginator = Paginator(products, 4)
     page = request.GET.get('page')
     paged_products = paginator.get_page(page)
     product_count = products.count()
+    
     context = {
         'products': paged_products,
         'product_count':product_count,
@@ -60,7 +62,7 @@ def admin_product_delete(request,product_id):
     product = Product.objects.get(id=product_id)
     product.delete()
     return redirect("admin_product_list")
-#@login_required(login_url='admin_login')
+@login_required(login_url='admin_login')
 def admin_edit_product(request,product_id):
     product = Product.objects.get(id=product_id)
     if request.method =="POST":
@@ -68,7 +70,6 @@ def admin_edit_product(request,product_id):
         
         if form.is_valid():
             product = form.save(commit=False)
-            #product.category = request.POST.get('category')
             product.save()
             
             return redirect(reverse('admin_product_list'))
@@ -78,7 +79,5 @@ def admin_edit_product(request,product_id):
         'form':form,
     }
     return render(request,"admin_dashboard/product_edit.html",context)
-
-
 
 

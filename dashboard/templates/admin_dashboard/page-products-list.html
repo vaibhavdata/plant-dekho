@@ -10,8 +10,6 @@
             <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div>
-            <a href="#" class="btn btn-light rounded font-md">Export</a>
-            <a href="#" class="btn btn-light rounded  font-md">Import</a>
 
             <a href="{% url 'admin_add_product' %}" class="btn btn-primary btn-sm rounded">Create new</a>
 
@@ -19,7 +17,7 @@
     </div>
     <div class="card mb-4">
         <header class="card-header">
-            <form action="" method="GET">
+            <form action="{% url 'admin_serach' %}" method="GET">
                 <div class="row align-items-center">
                     <div class="col col-check flex-grow-0">
                         <div class="form-check ms-2">
@@ -27,21 +25,22 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-12 me-auto mb-md-0 mb-3">
-                        <select class="form-select">
+                        <select class="form-select" name="keyword">
                             <option selected>All category</option>
                             {% for category in links %}
-                            <option><a href="{{ category.get_url }}">{{category.category_name}}</a></option>
+                            <option selected><a href="{{ category.get_url }}">{{category.category_name}}</a></option>
                             {% endfor %}
                         </select>
                     </div>
+                    
                     <div class="col-md-2 col-6">
                         <input type="date" value="02.05.2021" class="form-control">
                     </div>
                     <div class="col-md-2 col-6">
-                        <select class="form-select">
-                            <option selected>Status</option>
+                        <select class="form-select" name="keyword">
+                            <option selected >Status</option>
                             {% for product in products %}
-                            <option selected>{{product.label}}</option>
+                            <option value="{{product.id}}" {% if product.id in products.id }>{{product.label}}</option>
                             {% endfor %}
 
                         </select>

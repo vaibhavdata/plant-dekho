@@ -60,7 +60,7 @@ def admin_edit_category(request,category_id):
         form = CategoryForm(instance=category)
     context = {'form':form}
     return render(request,"admin_dashboard/admin_edit_category.html",context)
-#@login_required(login_url='admin_login')
+@login_required(login_url='admin_login')
 def category_search(request):
     if 'keyword' in request.GET:
         keyword = request.GET['keyword']

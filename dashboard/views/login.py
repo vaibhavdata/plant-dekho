@@ -1,6 +1,5 @@
 from email.mime import message
 from multiprocessing import context
-from accounts.views import edit_profile
 from dashboard.froms.admin_form import AdminForm, AdminProfileForm, AdminRegistrationForm
 from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib import messages, auth
@@ -32,7 +31,7 @@ def admin_register(request):
             # USER ACTIVATION
             
             messages.success(request, 'Your login Admin of project ')
-            return redirect("admin_dashboard")
+            return redirect("admin_login")
     else:
         form = AdminRegistrationForm()
     context = {
@@ -48,9 +47,13 @@ def admin_login(request):
         user = auth.authenticate(email=email, password=password)
         print(user)
         if user is not None:
-            auth.login(request, user)
-            messages.success(request, 'You are now admin logged in.')
-            return redirect('admin_dashboard')
+            if user.is_admin:
+                auth.login(request, user)
+                messages.success(request, 'You are now admin logged in.')
+                return redirect('admin_dashboard')
+            else:
+                messages.success(request,"user not admin")
+                return redirect("admin_login")
         else:
             messages.error(request, 'Invalid login credentials')
             return redirect('admin_login')
