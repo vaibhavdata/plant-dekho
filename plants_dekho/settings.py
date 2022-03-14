@@ -180,4 +180,4 @@ EMAIL_HOST_PASSWORD = 'testadmin!12'
 EMAIL_PORT = 587
 # Whitenoise settings
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE =  "whitenoise.storage.CompressedStaticFilesStorage"
+#STATICFILES_STORAGE =  "whitenoise.storage.CompressedStaticFilesStorage"
