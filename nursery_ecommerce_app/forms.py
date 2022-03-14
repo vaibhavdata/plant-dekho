@@ -1,5 +1,5 @@
 from django import forms
-from nursery_ecommerce_app.models.order import Order
+from nursery_ecommerce_app.models.order import Order,Coupon
 from nursery_ecommerce_app.models.product import ReviewRating
 class OrderForm(forms.ModelForm):
     class Meta:
@@ -10,3 +10,9 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = ReviewRating
         fields = ['subject', 'review', 'rating']
+
+class CouponForm(forms.Form):
+    code = forms.CharField(widget=forms.TextInput(attrs={
+        'class': 'form-control',
+        'placeholder': 'Promo code'
+    }))

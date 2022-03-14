@@ -10,7 +10,7 @@ from django.utils.html import format_html
 from django.contrib import admin
 from .models.product import Product, ReviewRating, ProductGallery
 from .models.carts import Cart,CartItem
-from .models.order import Payment,OrderProduct,Order
+from .models.order import Payment,OrderProduct,Order,Coupon
 class CartAdmin(admin.ModelAdmin):
     list_display = ('cart_id', 'date_added')
 class CartItemAdmin(admin.ModelAdmin):
@@ -85,3 +85,4 @@ admin.site.register(Account, AccountAdmin)
 admin.site.register(Cart, CartAdmin)
 admin.site.register(CartItem, CartItemAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Coupon)

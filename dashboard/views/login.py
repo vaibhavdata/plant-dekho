@@ -69,7 +69,8 @@ def admin_logout(request):
         messages.success(request,"logout only admin ")
         return redirect(url)
 def admin_edit_profile(request):
-    adminprofile = UserProfile.objects.filter(user= request.user)
+    adminprofile = get_object_or_404(UserProfile,user=request.user)
+    #adminprofile = UserProfile.objects.filter(user= request.user)
     if request.method =="POST":
         admin_form = AdminForm(request.POST,instance =request.user)
         profile_Form = AdminProfileForm(request.POST,request.FILES,instance =adminprofile)
