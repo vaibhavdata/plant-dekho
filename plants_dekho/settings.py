@@ -62,8 +62,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_session_timeout.middleware.SessionTimeoutMiddleware',
-    "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 CSRF_COOKIE_SECURE = False
 ROOT_URLCONF = 'plants_dekho.urls'
@@ -90,11 +89,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'plants_dekho.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.Account'
-AUTHENTICATION_BACKENDS = (
-    'nursery_ecommerce_app.backends.EmailBackend',
-    'dashboard.backends.EmailBackend',
-    
-)
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
