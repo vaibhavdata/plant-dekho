@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r^y)v34ih0-$&gu1n7$%$2kw=&il!z!p$6v0**4*p2hadx$297'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #ALLOWED_HOSTS = ['https://plantdekho.herokuapp.com/','https://plantdekho.herokuapp.com/','127.0.0.1',]
 
@@ -63,7 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_session_timeout.middleware.SessionTimeoutMiddleware',
     #'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 CSRF_COOKIE_SECURE = False
 ROOT_URLCONF = 'plants_dekho.urls'
@@ -175,4 +175,4 @@ EMAIL_HOST_USER = 'testkro356@gmail.com'
 EMAIL_HOST_PASSWORD = 'testadmin!12'
 EMAIL_PORT = 587
 # Whitenoise settings
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
