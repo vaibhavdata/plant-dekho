@@ -2,16 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&amp;display=swap");
 /*import vendors*/
-@import url(vendors/normalize.css);
-@import url(vendors/bootstrap.min.css);
-@import url(vendors/evara-font.css);
-@import url(vendors/uicons-regular-straight.css);
+@import url("vendors/normalize.112272e51c80.css");
+@import url("vendors/bootstrap.min.bc5fa7ebdefb.css");
+@import url("vendors/evara-font.7b90e8d3d898.css");
+@import url("vendors/uicons-regular-straight.136972040f8e.css");
 /*import plugins*/
-@import url(plugins/jquery-ui.css);
-@import url(plugins/magnific-popup.css);
-@import url(plugins/select2.min.css);
-@import url(plugins/slick.css);
-@import url(plugins/perfect-scrollbar.css);
+@import url("plugins/jquery-ui.9f243e2305ee.css");
+@import url("plugins/magnific-popup.6c61bad77867.css");
+@import url("plugins/select2.min.048fe07cf9a7.css");
+@import url("plugins/slick.526697d0e705.css");
+@import url("plugins/perfect-scrollbar.5694c8dc9327.css");
 /* Hide Radio button */
 .rate > input{
   display: none;
@@ -551,7 +551,7 @@ h4 {
   display: inline-block;
   -webkit-animation: spinner 1.2s infinite ease-in-out;
   animation: spinner 1.2s infinite ease-in-out;
-  background: url(../imgs/favicon.html);
+  background: url("../imgs/favicon.6c247486245d.html");
   -webkit-box-shadow: 0 0 10px #fff;
           box-shadow: 0 0 10px #fff;
 }
@@ -1010,15 +1010,15 @@ button.submit:hover, button[type='submit']:hover {
 }
 
 .btn.btn-brush.btn-brush-1, .button.btn-brush.btn-brush-1 {
-  background-image: url(../imgs/theme/btn-brush-bg-1.png);
+  background-image: url("../imgs/theme/btn-brush-bg-1.73a53fa02e80.png");
 }
 
 .btn.btn-brush.btn-brush-2, .button.btn-brush.btn-brush-2 {
-  background-image: url(../imgs/theme/btn-brush-bg-2.png);
+  background-image: url("../imgs/theme/btn-brush-bg-2.a057d541566c.png");
 }
 
 .btn.btn-brush.btn-brush-3, .button.btn-brush.btn-brush-3 {
-  background-image: url(../imgs/theme/btn-brush-bg-3.png);
+  background-image: url("../imgs/theme/btn-brush-bg-3.8876b0ea7055.png");
 }
 
 .comments-area .btn-reply {
@@ -4300,7 +4300,7 @@ table .product-thumbnail img {
 }
 
 .product-rate {
-  background-image: url("../imgs/theme/rating-stars.png");
+  background-image: url("../imgs/theme/rating-stars.982b8ee1ff27.png");
   background-position: 0 -12px;
   background-repeat: repeat-x;
   height: 12px;
@@ -4312,7 +4312,7 @@ table .product-thumbnail img {
 .product-rating {
   height: 12px;
   background-repeat: repeat-x;
-  background-image: url("../imgs/theme/rating-stars.png");
+  background-image: url("../imgs/theme/rating-stars.982b8ee1ff27.png");
   background-position: 0 0;
 }
 
@@ -5192,7 +5192,7 @@ h6.post-title {
   border-bottom: 1px solid #e2e9e1;
   background-color: #f2f3f8;
   font-size: 14px;
-  background-image: url(../imgs/theme/topbar-bg.jpg);
+  background-image: url("../imgs/theme/topbar-bg.f8319e79899c.jpg");
   line-height: 1;
 }
 
@@ -5888,7 +5888,7 @@ h6.post-title {
   border-width: 0 0 3px 0;
   border-style: solid;
   font-size: 16px;
-  background-image: url(../imgs/theme/icons/search.png);
+  background-image: url("../imgs/theme/icons/search.6598404ccd8a.png");
   background-repeat: no-repeat;
   background-position: center left;
   padding-left: 35px;
