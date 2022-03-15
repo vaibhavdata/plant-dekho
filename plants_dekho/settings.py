@@ -144,35 +144,25 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
-# Extra places for collectstatic to find static files.
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static/'),
-    #os.path.join(BASE_DIR, 'dashboard/static/'),
+    os.path.join(BASE_DIR, 'static'),
 )
-STATICFILES_LOCATION = 'static'
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-)
-# SMTP configuration
-# SMTP configuration
-DEBUG = True
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'testkro356@gmail.com'
 EMAIL_HOST_PASSWORD = 'testadmin!12'
 EMAIL_PORT = 587
 # Whitenoise settings
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#WHITENOISE_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
