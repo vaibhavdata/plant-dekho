@@ -1,66 +1,34 @@
- /* Hide Radio button */
- .rate > input{
-  display: none;
-}
-
-.rate{
-  display: inline-block;;
-  border: 0;
-}
-
-.rate > label{
-  float: right;
-}
-
-/* Showing the stars */
-.rate > label:before{
-  display: inline-block;
-  font-size: 1.1rem;
-  font-family: FontAwesome;
-  content: "\f005";
-  margin:0;
-  padding:0.3rem .2rem;
-  cursor: pointer;
-}
-
-/* Half star */
-.rate .half:before{
-  content: "\f089";
-  position: absolute;
-  padding-right: 0;
-}
-
-/* Click and hover */
-input:checked ~ label, label:hover ~ label{
-  color: #ffb503;
-}
-
-/* hover hightlight */
-input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
-label:hover ~ input:checked ~ label{
-  color: #cc9000;
-}
-
-.rating-star i{
-  color: #ffb503 !important;
-}
-
-ul.thumb{
-  margin:0 auto;
-  padding: 0;
-  float: left;
-}
-ul.thumb li{
-  list-style: none;
-  margin: 10px;
-}
-ul.thumb li img{
-  width: 80px;
-  height: 80px;
-  border: 1px solid grey;
-}
-
-
+/***
+ Theme Name: Evara
+ Theme URI: http://wp.alithemes.com/html/Evara
+ Description: eCommerce HTML + Admin Template
+ Author: alithemes.com
+ Author URI: http://alithemes.com
+ Version: 1.0
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+==============================
+TABLE CONTENT
+ Import Google Fonts
+ Include Third Party CSS Library
+ GENERAL
+ HEADER
+ Offcanvas Sidebar
+ Search form
+ Main header
+ Mega menu
+ Header layouts
+ Page layouts
+ Pagination
+ Breadcrumb
+ CATEGORY PAGES
+ SINGLE POST
+ Author box
+ comment
+ Post share social
+ WP STYPE
+ Custom amine
+***/
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;500;600;700&amp;display=swap");
 /*import vendors*/
