@@ -30,6 +30,7 @@
                                     <th scope="col" colspan="2">Product</th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Quantity</th>
+                                    <th scope="col"> Total</th>
                                     <th scope="col">Remove</th>
                                 </tr>
                             </thead>
@@ -42,6 +43,7 @@
 
                                     </td>
                                     <td class="price" data-title="Price"><span>{{ cart_item.product.price }}</span></td>
+                                    
                                     <td class="text-center" data-title="Quantity">
                                         <div class="input-group-prepend">
                                             <a href="{% url 'remove_cart' cart_item.product.id cart_item.id %}"
@@ -49,6 +51,7 @@
                                                     class="fa fa-minus"></i> </a>
                                         </div>
                                         <span class="color3 font-weight-bold">{{ cart_item.quantity }}</span>
+                                        
                                         <div class="input-group-prepend">
                                             <a href="{% url 'add_cart' cart_item.product.id %}" class="btn btn"
                                                 type="button" id="button-minus"> <i class="fa fa-plus"></i> </a>
@@ -60,6 +63,13 @@
                                 </tr>
                                 {% endfor %}
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td scope="col" colspan="3">Total price </td>
+                                    <td scope="col" colspan="2" class="price " data-title="Total Price"><span>₹ {{ grand_total }}</span></td>
+                                </tr>
+                            </tfoot>
+                            
                         </table>
                     </div>
                 </div>
