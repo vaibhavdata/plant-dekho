@@ -17,17 +17,9 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-r^y)v34ih0-$&gu1n7$%$2kw=&il!z!p$6v0**4*p2hadx$297'
+DEBUG = False
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-#ALLOWED_HOSTS = ['https://plantdekho.herokuapp.com/','https://plantdekho.herokuapp.com/','127.0.0.1',]
 
 ALLOWED_HOSTS = [
     '*',
@@ -163,6 +155,5 @@ EMAIL_HOST_USER = 'testkro356@gmail.com'
 EMAIL_HOST_PASSWORD = 'testadmin!12'
 EMAIL_PORT = 587
 # Whitenoise settings
-#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-#WHITENOISE_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
