@@ -17,13 +17,13 @@ def contact(request):
         email_subject = 'You have a new message from plates dekho website regarding ' + customer_need
         message_body = 'Name: ' + name + '. Email: ' + email + '. Phone: ' + phone + '. Message: ' + message
 
-        admin_info = Account.objects.get(is_admin=True)
-        admin_email = admin_info.email
+        #admin_info = Account.objects.get(is_admin=True)
+        #admin_email = admin_info.email
         send_mail(
                 email_subject,
                 message_body,
-                'testkro356@gmail.com',
-                [admin_email],
+                settings.EMAIL_HOST_USER,
+                ['testkro356@gmail.com'],
                 fail_silently=False,
             )
         messages.success(request, 'Thank you for contacting us. We will get back to you shortly')
