@@ -85,9 +85,9 @@
                         {% if products.has_other_pages %}
                         <ul class="pagination justify-content-start">
                             {% if products.has_previous %}
-                            <li class="page-item active"><a class="page-link" href="?page={{products.previous_page_number}}">Previous</a></li>
+                            <li class="page-item active"><a class="page-link" href="?page={{products.previous_page_number}}">Pr</a></li>
                             {% else %}
-                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item disabled"><a class="page-link" href="#">Pre</a></li>
                             {% endif %}
                             {% for i in products.paginator.page_range %}
 				                {% if products.number == i %}
