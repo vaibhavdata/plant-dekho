@@ -26,10 +26,9 @@ This web app captures claims of a user's first and last name. After a user regis
 
 ### Policies
 
-This web app uses "AdminOnly" policy to grant Admin special access privileges to `/Admin` and `/Inventory` page. This policy has been enforced so that only Admin can control the store inventory. To test the policy, use the following credential to log into the Admin account:
+This web app uses "AdminOnly" policy to grant Admin special access privileges to `/Admin` and `/Inventory` page. This policy has been enforced so that only Admin can control the store inventory. To test the policy, use the following credential to log into the Admin account,singup then login anyware ,here no problem
 
-    * Account: admin@email.com
-    * Password: ReallyStrongPassword1234!
+    
 
 ### Entity Relationship Diagram
 
@@ -44,7 +43,7 @@ This web app uses "AdminOnly" policy to grant Admin special access privileges to
 
 ## Vulnerability Report
 
-https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-report.md
+https://github.com/vaibhavdata/plant-dekho/blob/master/README.md
 
 ---
 
@@ -91,9 +90,6 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 ![shop-product-loggedout](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/product_detail.png)
 #### product list
 ![shop-product-loggedout](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/product_list.png)
-#### 
-
-![shop-product-loggedin](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/shop-product-loggedin.png)
 
 #### Cart item
 
@@ -126,29 +122,20 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 ![orders-admin](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/order.png)
 
-#### Manage Order Details (Admin)
+#### Category/Detail
 
-![order-details-admin](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/order-details-admin.png)
-
-#### Category
-
-![inventory-home]()
+![category-detail](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/category.png)
 
 #### category add
 
-![inventory-create](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_cat.png)
+![category-create](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_cat.png)
 
-#### Inventory/Edit
 
-![inventory-edit](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/inventory-edit.png)
+#### product/Detail
 
-#### product 
-
-![inventory-details]()
+![product-details](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/admin_product.png)
 #### product/add
 
-![inventory-add](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_product_new.png)
-#### product/edit
+![product-add](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_product_new.png)
 
-![inventory-edit](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_product_new.png)
 
