@@ -134,7 +134,6 @@ def dashboard(request):
 
    
     return render(request, 'dashboard.html',context)
-@login_required(login_url = 'login')
 def forgotPassword(request):
     if request.method == 'POST':
         email = request.POST['email']
@@ -160,7 +159,6 @@ def forgotPassword(request):
             messages.error(request, 'Account does not exist!')
             return redirect('forgotPassword')
     return render(request, 'forgotPassword.html')
-@login_required(login_url = 'login')
 def resetpassword_validate(request, uidb64, token):
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
@@ -176,7 +174,6 @@ def resetpassword_validate(request, uidb64, token):
         messages.error(request, 'This link has been expired!')
         return redirect('login')
 
-@login_required(login_url = 'login')
 def resetPassword(request):
     if request.method == 'POST':
         password = request.POST['password']
