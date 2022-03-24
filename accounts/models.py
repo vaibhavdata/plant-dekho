@@ -67,9 +67,9 @@ class Account(AbstractBaseUser):
     last_name       = models.CharField(max_length=50,db_index=True)
     username        = models.CharField(max_length=50, unique=True,db_index=True)
     email           = models.EmailField(max_length=100, unique=True,db_index=True)
-    phoneNumberRegex = RegexValidator(regex=r"^(\+\d{1,3})?,?\s?\d{8,13}$",message="Phone number must be entered in the format '+9537423323'. Up to 12 digits allowed.")
+    #phoneNumberRegex = RegexValidator(regex=r"^(\+\d{1,3})?,?\s?\d{8,13}$",message="Phone number must be entered in the format '+9537423323'. Up to 12 digits allowed.")
 
-    phone_number    = models.CharField(max_length=50,validators=[phoneNumberRegex])
+    phone_number    = models.CharField(max_length=50)
 
     # required
     date_joined     = models.DateTimeField(auto_now_add=True)
