@@ -43,7 +43,7 @@ This web app uses "AdminOnly" policy to grant Admin special access privileges to
 
 ## Vulnerability Report
 
-https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-report.md
+https://github.com/vaibhavdata/plant-dekho/blob/master/README.md
 
 ---
 
@@ -137,7 +137,5 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 #### product/add
 
 ![product-add](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_product_new.png)
-#### product/edit
 
-![product-edit](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_product_new.png)
 
