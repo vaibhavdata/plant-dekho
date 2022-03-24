@@ -1,17 +1,16 @@
-# tiny-plants-eCommerce
+# plantdekho-ECommerce
 
-![Actions Status](https://github.com/jeremymaya/tiny-plants-eCommerce/workflows/build/badge.svg)  
-![Actions Status](https://github.com/jeremymaya/tiny-plants-eCommerce/workflows/deploy/badge.svg)
 
-Author: [Karina Chen](https://github.com/karina6188), and Kyungrae Kim
+Author: [vaibha choudhary ](https://github.com/vaibhavdata)
 
-Website : <https://tinyplants.herokuapp.com>
+Website : <https://plantdekho.herokuapp.com/>
 
 ---
 
 ## About This Program
 
-This is an eCommerce store TINY PLANTS built with ASP.NET Core's MVC and Razor Pages. The web app features a user login security system, a welcoming home page, a product page, and a product details page that allows the user to add items into cart for checkout. This web app is built to provide a satisfying shopping experience to our users.
+This is an eCommerce store PLANTS DeKhO built with django. The web app features a user login security system, a welcoming home page, a product page, and a product details page that allows the user to add items into cart for checkout. This web app is built to provide a satisfying shopping experience to our users. This web app also have admin paned there admin also add,edit or delete a category and Product.its online ecommerce application,this app admin also check a oder deliver or not.
+Here using token base login,edit profile, checkout,resend password,this app like a real world problem solution,also using this application sercur.
 
 ---
 
@@ -19,7 +18,7 @@ This is an eCommerce store TINY PLANTS built with ASP.NET Core's MVC and Razor P
 
 ### Products
 
-This e-commerce store sells tiny plants including cactuses, flowers, and evergreen plants that can be placed indoor. There are currently total of 10 products available on this website.
+This e-commerce store  plantsdekho including office ,indoor , and evergreen plants that can be placed indoor. There are currently total of 8 products available on this website. here add plants how many plants need seller,seller app product automaticali,here seperate admin dashboard,if seller are new then seller login after add product and category.
 
 ### Claims
 
@@ -55,7 +54,7 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 #### Home - Logged Out
 
-![home-loggedout](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/home-loggedout.png)
+![home-loggedout](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/home_some.png)
 
 #### Home - Logged In (User)
 
@@ -65,11 +64,11 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 #### Register
 
-![account-register](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/account-register.png)
+![account-register](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/singin.png)
 
 #### Login
 
-![account-login](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/account-login.png)
+![account-login](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/sing.png)
 
 #### User Profile
 
@@ -81,7 +80,7 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 #### Manage Order Details (User)
 
-![order-details-user](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/order-details-user.png)
+![order-details-user](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/checkout.png)
 
 ### Shop
 
@@ -157,18 +156,3 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 ![inventory-delete](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/inventory-delete.png)
 
----
-
-## Resources
-
-* [Add or Remove Multiple Entities in Entity Framework](https://www.entityframeworktutorial.net/entityframework6/addrange-removerange.aspx)  
-* [Adding Email](https://www.learnrazorpages.com/razor-pages/tutorial/bakery/email)  
-* [Azure Blob storage client library v12 for .NET](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-dotnet)  
-* [Azure Storage CRUD Operations In MVC Using C#](https://www.c-sharpcorner.com/article/azure-storage-crud-operations-in-mvc-using-c-sharp-part-two/)  
-* [Handler Methods in Razor Pages](https://www.learnrazorpages.com/razor-pages/handler-methods)  
-* [HtmlHelper - Editor](https://www.tutorialsteacher.com/mvc/htmlhelper-editor-editorfor)  
-* [Model Binding](https://www.learnrazorpages.com/razor-pages/model-binding)  
-* [Upload files in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads?view=aspnetcore-3.1)  
-* [Upload File In Azure Blob Storage Using ASP.NET Core](https://www.c-sharpcorner.com/article/upload-files-in-azure-blob-storage-using-asp-net-core/)
-
----
