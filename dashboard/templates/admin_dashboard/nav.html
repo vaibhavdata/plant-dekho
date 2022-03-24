@@ -3,8 +3,8 @@
 
 <aside class="navbar-aside" id="offcanvas_aside">
     <div class="aside-top">
-        <a href="index.php" class="brand-wrap">
-            GO4plant
+        <a href="{% url 'admin_dashboard' %}" class="brand-wrap">
+            plantdekho
         </a>
         <div>
             <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i>
@@ -14,7 +14,7 @@
     <nav>
         <ul class="menu-aside">
             <li class="menu-item active">
-                <a class="menu-link" href="index.html"> <i class="icon material-icons md-home"></i>
+                <a class="menu-link" href="{% url 'admin_dashboard' %}"> <i class="icon material-icons md-home"></i>
                     <span class="text">Dashboard</span>
                 </a>
             </li>
@@ -75,11 +75,7 @@
                         aria-expanded="false"> <img class="img-xs rounded-circle"
                             src="#" alt="User">{{user.first_name}}</a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
-                        <a class="dropdown-item" href="{% url 'admin_edit_profile' %}"><i class="material-icons md-perm_identity"></i>Edit
-                            Profile</a>
-                        <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
                         
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="{% url 'admin_logout' %}"><i
                                 class="material-icons md-exit_to_app"></i>Logout</a>
                     </div>
