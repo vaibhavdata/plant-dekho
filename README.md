@@ -52,11 +52,11 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 ### Home
 
-#### Home - Logged Out
+#### Home - 
 
 ![home-loggedout](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/home_some.png)
 
-#### Home - Logged In (User)
+#### Dashboard(user)
 
 ![home-loggedin-user](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/dashboard.png)
 
@@ -76,7 +76,7 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 
 
-#### Manage Order Details (User)
+####  Order Details (User) after payment
 
 ![order-details-user](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/checkout.png)
 
@@ -86,71 +86,69 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 ![shop](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/home_new.png)
 
-#### Shop/Product - Logged Out
+#### Product -detail
 
 ![shop-product-loggedout](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/product_detail.png)
-
-#### Shop/Product - Logged In
+#### product list
+![shop-product-loggedout](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/product_list.png)
+#### 
 
 ![shop-product-loggedin](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/shop-product-loggedin.png)
 
-#### Shop/Product - MiniCart
+#### Cart item
 
 ![shop-product-loggedin-minicart](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/cart_list.png)
 
-#### Shop/Cart (Empty)
+#### Cart (Empty)
 
-![shop-cart-empty](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/shop-cart-empty.png)
+![shop-cart-empty](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/cart_empty.png)
 
-#### Shop/Cart
-
-![shop-cart](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/shop-cart.png)
 
 ### Checkout
 
 #### Checkout Index
 
-![checkout](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/checkout.png)
+![checkout](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/checkname.png)
 
 #### Checkout/Receipt
 
-![checkout-receipt](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/checkout-receipt.png)
+![checkout-receipt](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/checkout.png)
+#### Password/forget 
 
+![password-forget](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/reset%20password.png)
+#### Password/change 
+
+![password-change](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/password%20chage.png)
 ### Admin
 
-#### Admin Index
+#### Admin Home Page
 
-![admin](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/admin.png)
 
-#### Manage Blob
-
-![admin-blob](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/admin-blob.png)
-
-#### Manage Orders (Admin)
-
-![orders-admin](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/orders-admin.png)
+![orders-admin](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/order.png)
 
 #### Manage Order Details (Admin)
 
 ![order-details-admin](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/order-details-admin.png)
 
-#### Inventory
+#### Category
 
-![inventory-home](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/inventory-home.png)
+![inventory-home]()
 
-#### Inventory/Create
+#### category add
 
-![inventory-create](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/inventory-create.png)
+![inventory-create](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_cat.png)
 
 #### Inventory/Edit
 
 ![inventory-edit](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/inventory-edit.png)
 
-#### Inventory/Details
+#### product 
 
-![inventory-details](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/inventory-details.png)
+![inventory-details]()
+#### product/add
 
-#### Inventory/Delete
+![inventory-add](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_product_new.png)
+#### product/edit
 
-![inventory-delete](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/inventory-delete.png)
+![inventory-edit](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/add_product_new.png)
 
