@@ -58,7 +58,7 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 #### Home - Logged In (User)
 
-![home-loggedin-user](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/home-loggedin-user.png)
+![home-loggedin-user](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/dashboard.png)
 
 ### Account
 
@@ -72,11 +72,9 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 #### User Profile
 
-![user-profile](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/user-profile.png)
+![user-profile](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/edit%20profile.png)
 
-#### Manage Orders (User)
 
-![orders-user](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/orders-user.png)
 
 #### Manage Order Details (User)
 
@@ -86,11 +84,11 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 #### Shop Index
 
-![shop](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/shop.png)
+![shop](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/home_new.png)
 
 #### Shop/Product - Logged Out
 
-![shop-product-loggedout](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/shop-product-loggedout.png)
+![shop-product-loggedout](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/product_detail.png)
 
 #### Shop/Product - Logged In
 
@@ -98,7 +96,7 @@ https://github.com/jeremymaya/Code-401-eCommerce/blob/master/vulnerability-repor
 
 #### Shop/Product - MiniCart
 
-![shop-product-loggedin-minicart](https://github.com/jeremymaya/Code-401-eCommerce/blob/master/dotnet_ECommerce/dotnet_ECommerce/wwwroot/captures/shop-product-loggedin-minicart.png)
+![shop-product-loggedin-minicart](https://github.com/vaibhavdata/plant-dekho/blob/master/screensort/cart_list.png)
 
 #### Shop/Cart (Empty)
 
